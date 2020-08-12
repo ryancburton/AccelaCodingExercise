@@ -10,5 +10,5 @@ Basic yet non-functional view created with Razor page. Normally this would be im
 like Angular for Vue.
 
 Database is hoted in Azure. Evaluator would have to sent me their ip address to allow exception for Azure firewall.
-Please mail address to ryancburton@yahoo.co.uk. 
+Please mail ip address to ryancburton@yahoo.co.uk. 
 
