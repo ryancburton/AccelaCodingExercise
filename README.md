@@ -9,4 +9,6 @@ MediatR is used to implement a domain-driven design using the Command and Query 
 Basic yet non-functional view created with Razor page. Normally this would be implemented using other better frameworks
 like Angular for Vue.
 
-Database can be hoted in Azure if deemed easiest
+Database is hoted in Azure. Evaluator would have to sent me their ip address to allow exception for Azure firewall.
+Please mail address to ryancburton@yahoo.co.uk. 
+
