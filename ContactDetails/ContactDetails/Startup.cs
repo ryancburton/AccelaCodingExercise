@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ContactDetails.Service.DAL.DataContext;
-//using ContactDetails.Domain.Commands.Data;
+using ContactDetails.Domain.Commands.Data;
 using ContactDetails.Domain.Queries.Data;
 using ContactDetails.Service.DAL.Service;
 using MediatR;
@@ -34,7 +34,12 @@ namespace ContactDetails
 
             services.AddMediatR(typeof(GetPersonsAllQuery).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(GetPersonsNumberQuery).GetTypeInfo().Assembly);
-            //services.AddMediatR(typeof(UpdateCompanyCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(AddPersonCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(EditPersonCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(DeletePersonCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(AddAddressCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(EditAddressCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(DeleteAddressCommandHandler).GetTypeInfo().Assembly);
 
             services.AddScoped<IContactDetailsDBService, ContactDetailsDBService>();
         }

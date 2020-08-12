@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactDetails.Domain.Commands.Data
 {
-    class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand, bool>
+    public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand, bool>
     {
         private readonly IContactDetailsDBService _contactDetailsDBService;
 

@@ -12,12 +12,9 @@ namespace ContactDetails.Service.DAL.Model
         {
             using (var context = new ContactDetailsContext(serviceProvider.GetRequiredService<DbContextOptions<ContactDetailsContext>>()))
             {
-                if (context.Person.Any())
+                if (!context.Person.Any())
                 {
-                    return;
-                }
-
-                context.Person.AddRange(
+                    context.Person.AddRange(
                                         new Person
                                         {
                                             firstName = "Bruce",
@@ -28,14 +25,12 @@ namespace ContactDetails.Service.DAL.Model
                                             firstName = "Harvey",
                                             lastName = "Dent"
                                         });
-                context.SaveChanges();
+                    context.SaveChanges();
+                }                
 
-                if (context.Address.Any())
+                if (!context.Address.Any())
                 {
-                    return;
-                }
-
-                context.Address.AddRange(
+                    context.Address.AddRange(
                                         new Address
                                         {
                                             street = "1 Bat Cave",
@@ -60,7 +55,8 @@ namespace ContactDetails.Service.DAL.Model
                                             postalCode = "LAW01",
                                             PersonId = 2
                                         });
-                context.SaveChanges();
+                    context.SaveChanges();
+                }                
             }
         }
     }
